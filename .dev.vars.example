@@ -1,0 +1,7 @@
+# 本地演示无需这个文件。真实连接时复制成 .dev.vars；不要提交凭证。
+APP_MODE="production"
+GOOGLE_SHEET_ID="replace-with-your-sheet-id"
+GOOGLE_SHEET_TAB="Leads"
+GOOGLE_CLIENT_EMAIL="replace@your-project.iam.gserviceaccount.com"
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nREPLACE\n-----END PRIVATE KEY-----\n"
+TURNSTILE_SECRET_KEY="replace-with-your-turnstile-secret"
