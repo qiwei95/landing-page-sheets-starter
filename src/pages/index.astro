@@ -1,0 +1,326 @@
+---
+import { site as s } from '../../shared/config';
+import '../styles/global.css';
+const canonical = new URL('/', s.seo.siteUrl).href;
+const fields = [
+  {
+    id: 'name',
+    label: s.form.nameLabel,
+    placeholder: s.form.namePlaceholder,
+    type: 'text',
+    autocomplete: 'name',
+    required: true,
+    max: 80,
+  },
+  {
+    id: 'phone',
+    label: s.form.phoneLabel,
+    placeholder: s.form.phonePlaceholder,
+    type: 'tel',
+    autocomplete: 'tel',
+    required: true,
+    max: 32,
+  },
+  {
+    id: 'email',
+    label: s.form.emailLabel,
+    placeholder: s.form.emailPlaceholder,
+    type: 'email',
+    autocomplete: 'email',
+    required: false,
+    max: 254,
+  },
+] as const;
+---
+
+<!doctype html>
+<html lang={s.seo.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{s.seo.title}</title>
+    <meta name="description" content={s.seo.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={s.brand.logo} />
+    <meta property="og:title" content={s.seo.title} />
+    <meta property="og:description" content={s.seo.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(s.seo.image, s.seo.siteUrl).href} />
+    <meta name="theme-color" content={s.theme.primary} />
+  </head>
+  <body
+    style={`--primary:${s.theme.primary};--accent:${s.theme.accent};--background:${s.theme.background};--surface:${s.theme.surface};--text:${s.theme.text}`}
+  >
+    <a class="skip-link" href="#main">
+      跳到主要内容
+    </a>
+    {s.brand.demo && <div class="sample-notice">{s.brand.demoNotice}</div>}
+    <header class="site-header wrap">
+      <a class="brand" href="#" aria-label={s.brand.name + ' 首页'}>
+        <img src={s.brand.logo} alt={s.brand.logoAlt} width="42" height="42" />
+        <span>
+          <strong>{s.brand.name}</strong>
+          <small>{s.brand.englishName}</small>
+        </span>
+      </a>
+      <nav aria-label="主要导航">
+        <a href="#services">{s.nav.services}</a>
+        <a href="#process">{s.nav.process}</a>
+        <a href="#faq">{s.nav.faq}</a>
+      </nav>
+      <a class="header-cta" href="#contact">
+        {s.nav.cta}
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="dot"></span>
+            {s.hero.eyebrow}
+          </p>
+          <h1 id="hero-title">{s.hero.title}</h1>
+          <p class="hero-description">{s.hero.description}</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">
+              {s.hero.primaryCta}
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#services">
+              {s.hero.secondaryCta}
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <p class="hero-note">
+            <span aria-hidden="true">○</span>
+            {s.hero.note}
+          </p>
+        </div>
+        <figure class="hero-visual">
+          <img
+            src={s.hero.image}
+            alt={s.hero.imageAlt}
+            width="720"
+            height="760"
+            fetchpriority="high"
+          />
+          <figcaption>
+            <span class="caption-line"></span>
+            {s.hero.imageCaption}
+          </figcaption>
+        </figure>
+      </section>
+      <section class="value-section" aria-labelledby="value-title">
+        <div class="wrap value-grid">
+          <div>
+            <p class="eyebrow">{s.value.label}</p>
+            <h2 id="value-title">{s.value.title}</h2>
+            <p class="section-intro">{s.value.description}</p>
+          </div>
+          <div class="value-list">
+            {s.value.items.map((item) => (
+              <article>
+                <span class="value-mark" aria-hidden="true">
+                  ✳
+                </span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="services" class="section wrap" aria-labelledby="services-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">{s.services.label}</p>
+            <h2 id="services-title">{s.services.title}</h2>
+          </div>
+          <p class="section-intro">{s.services.description}</p>
+        </div>
+        <div class="service-grid">
+          {s.services.items.map((item) => (
+            <article class="service-card">
+              <span class="service-tag">{item.tag}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <div class="service-bottom">
+                <small>{item.detail}</small>
+                <a href="#contact" data-service={item.id} aria-label={'咨询' + item.title}>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section id="process" class="process-section section" aria-labelledby="process-title">
+        <div class="wrap">
+          <p class="eyebrow">{s.process.label}</p>
+          <h2 id="process-title">{s.process.title}</h2>
+          <ol class="process-grid">
+            {s.process.items.map((item, i) => (
+              <li>
+                <span class="step-number">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      <section id="faq" class="section wrap faq-grid" aria-labelledby="faq-title">
+        <div>
+          <p class="eyebrow">{s.faq.label}</p>
+          <h2 id="faq-title">{s.faq.title}</h2>
+        </div>
+        <div class="faq-list">
+          {s.faq.items.map((item) => (
+            <details>
+              <summary>
+                {item.question}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+      <section id="contact" class="contact-section section" aria-labelledby="contact-title">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow">{s.nav.cta}</p>
+            <h2 id="contact-title">{s.form.title}</h2>
+            <p>{s.form.description}</p>
+            <div class="contact-detail">
+              <a href={'mailto:' + s.contact.email}>{s.contact.email}</a>
+              <span>{s.contact.location}</span>
+              <small>{s.contact.note}</small>
+            </div>
+            <img
+              class="contact-mark"
+              src={s.brand.logo}
+              alt=""
+              width="110"
+              height="110"
+              loading="lazy"
+            />
+          </div>
+          <div class="form-panel">
+            <div id="mode-banner" class="mode-banner" role="status">
+              正在检查收件状态…
+            </div>
+            <noscript>
+              <p class="form-status">请启用 JavaScript 后提交，或通过页面上的邮箱联系。</p>
+            </noscript>
+            <form id="lead-form" novalidate>
+              <div class="form-grid">
+                {fields.map((field) => (
+                  <div class={'field ' + (field.id === 'email' ? 'full' : '')}>
+                    <label for={field.id}>
+                      {field.label}
+                      {field.required && <span class="required"> *</span>}
+                    </label>
+                    <input
+                      id={field.id}
+                      name={field.id}
+                      type={field.type}
+                      autocomplete={field.autocomplete}
+                      placeholder={field.placeholder}
+                      maxlength={field.max}
+                      required={field.required}
+                      aria-describedby={field.id + '-error'}
+                    />
+                    <span class="field-error" id={field.id + '-error'}></span>
+                  </div>
+                ))}
+              </div>
+              <div class="field">
+                <label for="service">{s.form.serviceLabel}</label>
+                <select id="service" name="service" aria-describedby="service-error">
+                  <option value="">{s.form.servicePlaceholder}</option>
+                  {s.services.items.map((item) => (
+                    <option value={item.id}>{item.title}</option>
+                  ))}
+                </select>
+                <span class="field-error" id="service-error"></span>
+              </div>
+              <div class="field">
+                <label for="message">{s.form.messageLabel}</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  maxlength="2000"
+                  placeholder={s.form.messagePlaceholder}
+                  aria-describedby="message-error"
+                ></textarea>
+                <span class="field-error" id="message-error"></span>
+              </div>
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="consent-field">
+                <label>
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                    aria-describedby="consent-error"
+                  />
+                  <span>
+                    {s.form.consentText} <a href="#privacy">{s.form.privacyLinkText}</a>
+                  </span>
+                </label>
+                <span class="field-error" id="consent-error"></span>
+              </div>
+              <div id="verification" aria-describedby="verification-error"></div>
+              <span id="verification-error" class="field-error"></span>
+              <div
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+                tabindex="-1"
+                hidden
+              ></div>
+              <button class="button submit-button" type="submit" disabled>
+                <span id="submit-label">{s.form.submitLabel}</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap site-footer">
+      <div class="footer-top">
+        <a class="brand" href="#">
+          <img src={s.brand.logo} alt="" width="36" height="36" />
+          <strong>{s.brand.name}</strong>
+        </a>
+        <p>{s.footer.tagline}</p>
+        <a href={'mailto:' + s.contact.email}>{s.contact.email}</a>
+      </div>
+      <details id="privacy" class="privacy">
+        <summary>{s.footer.privacyTitle}</summary>
+        <p>{s.footer.privacyText}</p>
+      </details>
+      <div class="footer-bottom">
+        <small>
+          © {new Date().getFullYear()} {s.footer.copyright}
+        </small>
+        <a href="#main">回到顶部 ↑</a>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/form';
+    </script>
+  </body>
+</html>
