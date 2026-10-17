@@ -1,0 +1,154 @@
+{
+  "brand": {
+    "name": "禾序咨询",
+    "englishName": "HEXU CONSULTING",
+    "logo": "/images/mark.svg",
+    "logoAlt": "禾序咨询标志",
+    "demo": true,
+    "demoNotice": "教学示例 · 禾序咨询为虚构品牌，服务内容仅作模板演示"
+  },
+  "seo": {
+    "title": "禾序咨询｜把业务的下一步，想清楚",
+    "description": "从业务定位、客户沟通到执行流程，先理清问题，再找到适合团队的下一步。虚构品牌教学示例。",
+    "siteUrl": "https://example.com",
+    "image": "/images/consultation.svg",
+    "lang": "zh-CN"
+  },
+  "theme": {
+    "primary": "#142F42",
+    "accent": "#087E76",
+    "background": "#FFFFFF",
+    "surface": "#F1F6F5",
+    "text": "#183343"
+  },
+  "nav": {
+    "services": "咨询方向",
+    "process": "合作方式",
+    "faq": "常见问题",
+    "cta": "聊聊你的业务"
+  },
+  "hero": {
+    "eyebrow": "给正在寻找下一步的你",
+    "title": "把业务的下一步，\n想清楚。",
+    "description": "想法很多，却不知道先做哪一件？从一次有方向的对话开始，一起梳理业务问题，把想法变成具体的行动。",
+    "primaryCta": "预约初步咨询",
+    "secondaryCta": "先了解咨询方向",
+    "image": "/images/consultation.svg",
+    "imageAlt": "两张座椅与会议桌组成的咨询空间插画",
+    "imageCaption": "留一点空间，让问题看得更清楚。",
+    "note": "提交需求后，再一起确认适合的咨询方式。"
+  },
+  "value": {
+    "label": "先看清，再行动",
+    "title": "不是所有问题，\n都需要更用力。",
+    "description": "有时需要的，是把事情拆开、排好顺序，再决定资源放在哪里。",
+    "items": [
+      {
+        "title": "聚焦真正的问题",
+        "description": "从业务现状出发，分清眼前症状和需要处理的核心问题。"
+      },
+      {
+        "title": "找到合适的顺序",
+        "description": "把目标、资源与限制放在一起，讨论哪些事情值得先做。"
+      },
+      {
+        "title": "带着行动继续走",
+        "description": "让讨论落在具体的下一步，方便团队继续沟通与执行。"
+      }
+    ]
+  },
+  "services": {
+    "label": "咨询方向",
+    "title": "你正在面对哪一种挑战？",
+    "description": "从最需要理清的事情开始。你也可以直接告诉我们，还没有想清楚的问题。",
+    "items": [
+      {
+        "id": "positioning",
+        "title": "业务定位",
+        "description": "重新梳理服务对象、核心价值与业务重点。",
+        "detail": "适合：方向分散、服务难以说明的团队",
+        "tag": "找方向"
+      },
+      {
+        "id": "communication",
+        "title": "客户沟通",
+        "description": "整理客户从第一次接触到咨询的沟通路径。",
+        "detail": "适合：有服务，但客户不容易理解价值",
+        "tag": "讲清楚"
+      },
+      {
+        "id": "operations",
+        "title": "执行流程",
+        "description": "盘点重复工作、交接环节与团队协作方式。",
+        "detail": "适合：忙于处理事情，缺少清楚的工作顺序",
+        "tag": "理流程"
+      }
+    ]
+  },
+  "process": {
+    "label": "合作方式",
+    "title": "先了解彼此，再决定怎么合作。",
+    "items": [
+      { "title": "留下你的需求", "description": "简单介绍业务，以及目前最想解决的一件事。" },
+      { "title": "一起确认方向", "description": "进一步了解情况，讨论咨询范围与适合的合作方式。" },
+      { "title": "明确下一步", "description": "确认范围、时间与费用后，再开始正式合作。" }
+    ]
+  },
+  "faq": {
+    "label": "常见问题",
+    "title": "开始之前，你可能想知道。",
+    "items": [
+      {
+        "question": "还没想清楚需求，也可以咨询吗？",
+        "answer": "可以。先写下业务现状和最困扰你的一件事，再一起讨论需要理清的方向。"
+      },
+      {
+        "question": "提交表单就代表确认合作吗？",
+        "answer": "不会。表单用于初步了解需求，正式服务范围与费用需双方另外确认。"
+      },
+      {
+        "question": "咨询费用如何计算？",
+        "answer": "需根据具体需求、服务范围和时间安排确认。本教学示例没有提供真实报价。"
+      },
+      {
+        "question": "这是可以直接使用的真实服务吗？",
+        "answer": "这是虚构品牌的教学模板。学生可替换成自己的真实业务资料，并配置自己的收件 Google Sheet。"
+      }
+    ]
+  },
+  "form": {
+    "title": "聊聊你的下一步。",
+    "description": "不用准备完整提案，先告诉我们你正在面对什么。",
+    "nameLabel": "怎么称呼你",
+    "namePlaceholder": "你的姓名",
+    "phoneLabel": "联系电话",
+    "phonePlaceholder": "例如 +60 12 345 6789",
+    "emailLabel": "Email（选填）",
+    "emailPlaceholder": "you@example.com",
+    "serviceLabel": "你想咨询的方向（选填）",
+    "servicePlaceholder": "请选择方向",
+    "messageLabel": "目前最想解决的一件事（选填）",
+    "messagePlaceholder": "简单介绍你的业务和遇到的问题……",
+    "consentText": "我同意提供以上资料，用于回复本次咨询。",
+    "submitLabel": "提交咨询需求",
+    "submittingLabel": "正在提交…",
+    "successTitle": "需求已送达",
+    "successMessage": "资料已保存。我们会通过你提供的联系方式跟进。",
+    "demoTitle": "演示提交完成",
+    "demoMessage": "演示，未写入 Google Sheet。请配置你自己的收件资料后再正式使用。",
+    "demoBanner": "当前为演示模式，未写入 Google Sheet。请勿填写真实个人资料。",
+    "privacyLinkText": "资料使用说明",
+    "turnstileSiteKey": ""
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "location": "马来西亚 · 线上咨询",
+    "note": "虚构品牌 · 请替换为你的真实联系资料"
+  },
+  "footer": {
+    "tagline": "让方向清楚，让行动有序。",
+    "copyright": "禾序咨询 · 教学演示模板",
+    "privacyTitle": "资料使用说明",
+    "privacyText": "此页面是教学示例。演示模式不保存表单资料。切换正式模式后，提交的资料将保存到网站运营者配置的 Google Sheet，用于回复咨询。正式发布前，请填写真实运营者、联系方式、保存期限及删除资料的申请方式。"
+  }
+}
