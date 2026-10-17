@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "landing-page-sheets-starter",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-17",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  "vars": { "APP_MODE": "demo", "GOOGLE_SHEET_TAB": "Leads" },
+  "ratelimits": [
+    { "name": "LEAD_RATE_LIMITER", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } },
+  ],
+  "observability": { "enabled": true },
+}
