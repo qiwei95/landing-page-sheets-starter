@@ -1,0 +1,9 @@
+.agents/skills/frontend-design/
+node_modules/
+dist/
+.astro/
+.wrangler/
+qa/
+package-lock.json
+test-results/
+playwright-report/
