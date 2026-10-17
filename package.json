@@ -1,0 +1,39 @@
+{
+  "name": "landing-page-sheets-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro build && wrangler dev --ip 127.0.0.1 --port 8787",
+    "dev:design": "astro dev --host 127.0.0.1",
+    "build": "npm run config:check && astro build",
+    "check": "npm run config:check && astro check && tsc -p tsconfig.worker.json --noEmit",
+    "config:check": "tsx scripts/check-config.ts",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "preview": "wrangler dev --ip 127.0.0.1 --port 8787",
+    "deploy": "npm run check && npm run build && wrangler deploy",
+    "sheets:check": "tsx --env-file=.dev.vars scripts/sheets.ts check",
+    "sheets:init": "tsx --env-file=.dev.vars scripts/sheets.ts init",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "dependencies": {
+    "astro": "7.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@cloudflare/workers-types": "5.20261016.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.20.5",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5",
+    "wrangler": "4.151.1"
+  }
+}
